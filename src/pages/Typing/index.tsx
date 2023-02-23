@@ -191,9 +191,12 @@ const App: React.FC = () => {
             </Tooltip>
             <Switcher state={switcherState} dispatch={switcherStateDispatch} />
             <Tooltip content="快捷键 Enter">
+              {/* 开始button添加激活状态下的文字透明度变化 
+                  与上面的NavLink第几章节的样式对齐     
+              */}
               <button
                 className={`${
-                  isStart ? 'bg-gray-300 dark:bg-gray-700' : 'bg-indigo-400'
+                  isStart ? 'bg-gray-300 dark:bg-gray-700' : 'bg-indigo-400 dark:text-opacity-100'
                 }  text-white dark:text-opacity-80 transition-colors duration-300 text-lg w-20 px-6 py-1 rounded-lg focus:outline-none flex items-center justify-center`}
                 onClick={(e) => {
                   setIsStart((isStart) => !isStart)

@@ -5,10 +5,12 @@ export type PronunciationSwitcherPropsType = {
 
 const PronunciationSwitcher: React.FC<PronunciationSwitcherPropsType> = ({ state, changePronunciationState }) => {
   return (
-    <div className="flex items-center justify-center space-x-3">
+     // space-x-3不会生效，tailwind貌似在编译的时候删除了
+    <div className="flex items-center justify-center">
       <div>
+        {/* 父容器已经设置过了背景颜色，这边应该不需要再设置一次了 */}
         <select
-          className="dark:bg-gray-800 dark:text-white dark:text-opacity-60 transition-colors duration-300 cursor-pointer focus:outline-none"
+          className="dark:text-white dark:text-opacity-60 transition-colors duration-300 cursor-pointer focus:outline-none"
           value={state}
           onChange={(e) => {
             changePronunciationState(e.target.value)

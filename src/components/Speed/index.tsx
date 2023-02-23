@@ -19,7 +19,8 @@ const Speed: React.FC<SpeedProps> = ({ correctCount, inputCount, isStart, setSpe
   }, [speed, minutes, seconds, setSpeedInfo])
 
   return (
-    <div className="w-3/5 flex bg-white dark:bg-gray-800 transition-colors duration-300 mt-auto rounded-large card p-4 py-10 opacity-45">
+    // 去除opacity-45，tailwind并不包含这个样式，样式没有生效，如有需要请自定义
+    <div className="w-3/5 flex bg-white dark:bg-gray-800 transition-colors duration-300 mt-auto rounded-large card p-4 py-10">
       <InfoBox info={`${minutesStirng}:${secondsStirng}`} description="时间" />
       <InfoBox info={inputCount + ''} description="输入数" />
       <InfoBox info={speed + ''} description="速度" />
